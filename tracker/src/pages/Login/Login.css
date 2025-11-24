@@ -1,0 +1,68 @@
+/* Página de Login */
+.login-page {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.login-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  border-radius: 16px;
+  width: 320px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h1 {
+  margin-bottom: 24px;
+}
+
+/* Inputs */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Botão */
+.login-container button {
+  width: 100%;
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #0097a7;
+}
+
+/* Link de cadastro */
+.register-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
