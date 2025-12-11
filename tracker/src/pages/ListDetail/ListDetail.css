@@ -50,3 +50,67 @@
   opacity: 0.7;
   margin-bottom: 20px;
 }
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.item-card {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.item-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.item-card p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ddd;
+}
+
+.item-menu-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.item-menu {
+  position: absolute;
+  top: 35px;
+  right: 8px;
+  background: #272727;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+.item-menu button {
+  background: none;
+  border: none;
+  color: #ff5c5c;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+}
+
+.item-card {
+  position: relative;
+}

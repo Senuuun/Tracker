@@ -62,3 +62,107 @@
   color: #b3b3b3;
   font-size: 14px;
 }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: #1c1c1c;
+  padding: 35px;
+  width: 450px;
+  max-width: 90%;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  background: #262626;
+  border: 1px solid #444;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  background: #00acc1;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #00acc1;
+  color: #00acc1;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-dots {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 5px;
+  user-select: none;
+}
+
+.menu-dots:hover {
+  color: #00acc1;
+}
+
+.menu-options {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background: #1f1f1f;
+  border: 1px solid #333;
+  border-radius: 6px;
+  width: 150px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-options span {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.menu-options span:hover {
+  background: #2a2a2a;
+  color: #00acc1;
+}

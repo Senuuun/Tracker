@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProfileMenu.css";
 
 const ProfileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profilePic, setProfilePic] = useState(localStorage.getItem("profilePic"));
   const navigate = useNavigate();
 
   let user = null;
@@ -13,6 +14,16 @@ const ProfileMenu = () => {
   } catch (err) {
     console.error("Erro ao ler usuário do localStorage:", err);
   }
+
+  // Atualiza quando a foto muda
+  useEffect(() => {
+    const updatePic = () => {
+      setProfilePic(localStorage.getItem("profilePic"));
+    };
+
+    window.addEventListener("storage", updatePic);
+    return () => window.removeEventListener("storage", updatePic);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -24,9 +35,8 @@ const ProfileMenu = () => {
     <div className="profilemenu-container">
       <img
         src={
-          user?.avatar && user.avatar !== "null" && user.avatar !== "undefined"
-            ? user.avatar
-            : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          profilePic ||
+          "https://cdn-icons-png.flaticon.com/512/149/149071.png"
         }
         alt="Avatar"
         className="profilemenu-avatar"
@@ -44,11 +54,8 @@ const ProfileMenu = () => {
               <div className="profilemenu-userinfo">
                 <img
                   src={
-                    user?.avatar &&
-                    user.avatar !== "null" &&
-                    user.avatar !== "undefined"
-                      ? user.avatar
-                      : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                    profilePic ||
+                    "https://cdn-icons-png.flaticon.com/512/149/149071.png"
                   }
                   alt="Avatar"
                   className="profilemenu-useravatar"

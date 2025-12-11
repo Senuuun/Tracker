@@ -1,0 +1,232 @@
+.details-bg {
+  width: 100%;
+  background: #181818;
+  padding: 50px 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+}
+
+/* ESQUERDA */
+.details-content {
+  width: 60%;
+  max-width: 750px;
+}
+
+/* Título */
+.details-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Metadados */
+.details-meta {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* Descrição */
+.details-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.92;
+  margin-bottom: 30px;
+  max-width: 85%;
+}
+
+/* Botões */
+.details-buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 40px;
+  align-items: center;
+  position: relative;
+}
+
+/* Botão principal */
+.btn-primary {
+  background: #00acc1;
+  color: #fff;
+  border: none;
+  padding: 14px 26px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap; /* impede esticar */
+}
+
+.btn-primary:hover {
+  background: #0097a8;
+}
+
+/* Botão redondo */
+.btn-round {
+  width: 44px;
+  height: 44px;
+  background: #2a2a2a;
+  border-radius: 999px;
+  border: none;
+  color: white;
+  font-size: 1.9rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 0;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-round:hover {
+  background: #3a3a3a;
+  transform: scale(1.08);
+}
+
+/* POSTER */
+.poster-box {
+  width: 320px;
+  height: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+.poster-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Loading */
+.loadingDetails {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  font-size: 1.2rem;
+}
+
+/* ========================================= */
+/* EXPANDIR DETALHES */
+/* ========================================= */
+
+.extra-info {
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 40px 60px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  margin: 0;
+}
+
+.extra-info.open {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.extra-info h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.extra-info:not(.open) {
+  padding: 0;
+}
+
+/* GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARDS */
+.info-box {
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.info-box h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 15px;
+  color: #cfcfcf;
+}
+
+/* ========================================= */
+/* RESPONSIVO */
+/* ========================================= */
+
+@media (max-width: 900px) {
+  .details-bg {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details-content {
+    width: 100%;
+  }
+
+  .poster-box {
+    margin-top: 30px;
+    width: 260px;
+  }
+
+  .details-description {
+    max-width: 100%;
+  }
+}
+
+/* MENU DE LISTAS (fora do media query - FIXADO!) */
+
+.add-menu {
+  position: absolute;
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 5px;
+  left: 750px;
+  top: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #444;
+  z-index: 999;
+  min-width: 160px; 
+}
+
+.add-menu p {
+  margin: 0 0 6px 0;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.menu-item {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background: #333;
+}
+

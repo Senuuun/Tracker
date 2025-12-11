@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import SeriesPage from "./pages/SeriesPage/SeriesPage";
-import Topbar from "./components/Topbar/Topbar";
 import MyList from "./pages/MyList/MyList";
 import ListDetail from "./pages/ListDetail/ListDetail";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import DetailsPage from "./pages/DetailsPage/DetailsPage";
+import Topbar from "./components/Topbar/Topbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function AppContent() {
@@ -62,6 +63,15 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/details/:id"
+            element={
+              <ProtectedRoute>
+                <DetailsPage />
               </ProtectedRoute>
             }
           />

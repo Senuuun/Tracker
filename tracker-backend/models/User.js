@@ -1,7 +1,14 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../db.js";
+import { v4 as uuidv4 } from "uuid";
 
 const User = sequelize.define("User", {
+  id: {
+    type: DataTypes.UUID,
+    defaultValue: uuidv4,
+    primaryKey: true
+  },
+
   nome: {
     type: DataTypes.STRING,
     allowNull: false,
